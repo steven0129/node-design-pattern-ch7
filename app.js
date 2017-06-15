@@ -5,10 +5,16 @@ const bodyParser = require('body-parser');
 const errorHandler = require('errorhandler');
 const http = require('http');
 
-const authController = require('./lib/authController');
-
-let app = module.exports = new Express();
+const app = module.exports = new Express();
 app.use(bodyParser.json());
+
+const dbFactory = require('./lib/db');
+const authServiceFactory = require('./lib/authService');
+const authControllerFactory = require('./lib/authController');
+
+const db = dbFactory('example-db');
+const authService = authServiceFactory(db, 'SHHH!');
+const authController = authControllerFactory(authService);
 
 app.post('/login', authController.login);
 app.get('/checkToken', authController.checkToken);
