@@ -1,5 +1,5 @@
 This sample demonstrate how to build a simple authentication server
-using hard-coded dependencies.
+using a dependency injection container.
 
 To try the sample first install its dependencies:
   npm install
@@ -18,4 +18,4 @@ Now, to obtain a new authentication token run:
   curl -X POST -d '{"username": "alice", "password":"secret"}' http://localhost:3000/login -H "Content-Type: application/json"
 
 To check the validity of a token:
-  curl -X GET -H "Accept: application/json" http://localhost:3000/checkToken?token=<TOKEN HERE> 
+  curl -X GET -H "Accept: application/json" http://localhost:3000/checkToken?token=<TOKEN HERE>

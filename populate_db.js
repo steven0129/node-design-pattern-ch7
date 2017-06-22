@@ -19,8 +19,8 @@ async.forEach(users, (user, callback) => {
   usersDb.put(user.username, {
     hash: bcrypt.hashSync(user.password, 8)
   }, callback);
-}, err => {
-  if(err) {
+}, (err) => {
+  if (err) {
     return console.log(err);
   }
   console.log('DB populated');
