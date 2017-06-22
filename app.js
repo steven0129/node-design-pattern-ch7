@@ -16,6 +16,10 @@ svcLoc.factory('db', require('./lib/db'));
 svcLoc.factory('authService', require('./lib/authService'));
 svcLoc.factory('authController', require('./lib/authController'));
 
+svcLoc.register('app', app)
+const plugin = require('./lib/authsrv-plugin-logout')
+plugin(srvLoc)
+
 const authController = svcLoc.get('authController');
 
 app.post('/login', authController.login);
