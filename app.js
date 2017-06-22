@@ -10,7 +10,7 @@ const authController = require('./lib/authController');
 let app = module.exports = new Express();
 app.use(bodyParser.json());
 
-require('authsrv-plugin-logout')
+require('./lib/authsrv-plugin-logout')
 
 app.post('/login', authController.login);
 app.get('/checkToken', authController.checkToken);
