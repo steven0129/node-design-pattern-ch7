@@ -15,6 +15,7 @@ diContainer.register('tokenSecret', 'SHHH!');
 diContainer.factory('db', require('./lib/db'));
 diContainer.factory('authService', require('./lib/authService'));
 diContainer.factory('authController', require('./lib/authController'));
+diContainer.factory('app', app)
 
 const authController = diContainer.get('authController');
 
