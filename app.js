@@ -18,6 +18,8 @@ diContainer.factory('authController', require('./lib/authController'));
 
 const authController = diContainer.get('authController');
 
+diContainer.inject(require('./lib/authsrv-plugin-logout'));
+
 app.post('/login', authController.login);
 app.get('/checkToken', authController.checkToken);
 
