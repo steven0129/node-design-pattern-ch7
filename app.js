@@ -16,9 +16,6 @@ const db = dbFactory('example-db');
 const authService = authServiceFactory(db, 'SHHH!');
 const authController = authControllerFactory(authService);
 
-//initialize plugin
-require('authsrv-plugin-logout')(app, authService, db);
-
 app.post('/login', authController.login);
 app.get('/checkToken', authController.checkToken);
 
