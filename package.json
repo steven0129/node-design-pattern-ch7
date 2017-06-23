@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "async": "^2.0.0-rc.3",
+    "authsrv-plugin-logout": "file:authsrv-plugin-logout",
     "bcrypt": "^0.8.5",
     "body-parser": "^1.15.0",
     "errorhandler": "^1.4.3",
