@@ -18,7 +18,7 @@ svcLoc.factory('authController', require('./lib/authController'));
 
 svcLoc.register('app', app)
 const plugin = require('authsrv-plugin-logout')
-plugin(srvLoc)
+plugin(svcLoc)
 
 const authController = svcLoc.get('authController');
 
