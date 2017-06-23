@@ -2,7 +2,7 @@ module.exports = (serviceLocator) => {
     const authService = serviceLocator.get('authService');
     const db = serviceLocator.get('db');
     const app = serviceLocator.get('app');
-    const tokensDb = db.sublevel('tokens');
+    const tokensDB = db.sublevel('tokens');
     const oldLogin = authService.login;
 
     authService.login = (username, password, callback) => {
