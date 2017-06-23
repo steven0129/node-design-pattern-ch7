@@ -12,10 +12,10 @@ const diContainer = require('./lib/diContainer')();
 
 diContainer.register('dbName', 'example-db');
 diContainer.register('tokenSecret', 'SHHH!');
+diContainer.register('app', app)
 diContainer.factory('db', require('./lib/db'));
 diContainer.factory('authService', require('./lib/authService'));
 diContainer.factory('authController', require('./lib/authController'));
-diContainer.factory('app', app)
 
 const authController = diContainer.get('authController');
 
